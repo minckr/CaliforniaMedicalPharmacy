@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "California Medical Pharmacy <onboarding@resend.dev>",
       to,
-      replyTo: email,
+      reply_to: email,
       subject: `Website message from ${name}`,
       text: `From: ${name} <${email}>\n\n${message}`,
     });

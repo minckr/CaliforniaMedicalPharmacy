@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
@@ -31,30 +33,28 @@ export default function ContactForm() {
   }
 
   if (status === "sent") {
-    return <p>Thanks. Your message is on its way to the pharmacy.</p>;
+    return <p>{t.contact.thanks}</p>;
   }
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <label>
-        Name
+        {t.common.name}
         <input name="name" type="text" required />
       </label>
       <label>
-        Email
+        {t.common.email}
         <input name="email" type="email" required />
       </label>
       <label>
-        Message
+        {t.contact.formLabels.message}
         <textarea name="message" rows={5} required />
       </label>
       <button className="submit" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : "Send message"}
+        {status === "sending" ? t.common.sending : t.contact.formLabels.send}
       </button>
       {status === "error" && (
-        <p style={{ color: "#a4372b" }}>
-          Something went wrong. Please try again or call (213) 413-2343.
-        </p>
+        <p style={{ color: "#a4372b" }}>{t.common.errorGeneric}</p>
       )}
     </form>
   );

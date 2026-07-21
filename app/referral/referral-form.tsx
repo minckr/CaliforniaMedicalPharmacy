@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ReferralForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
@@ -39,45 +41,42 @@ export default function ReferralForm() {
   }
 
   if (status === "sent") {
-    return (
-      <p>
-        Thank you. This referral has been sent to our team and someone will
-        follow up shortly.
-      </p>
-    );
+    return <p>{t.referral.thanks}</p>;
   }
+
+  const l = t.referral.labels;
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <label>
-        Provider name
+        {l.providerName}
         <input name="providerName" type="text" required />
       </label>
       <label>
-        Practice / facility name
+        {l.practiceName}
         <input name="practiceName" type="text" />
       </label>
       <label>
-        Provider phone
+        {l.providerPhone}
         <input name="providerPhone" type="tel" required />
       </label>
       <label>
-        Provider email
+        {l.providerEmail}
         <input name="providerEmail" type="email" required />
       </label>
       <label>
-        Patient name
+        {l.patientName}
         <input name="patientName" type="text" required />
       </label>
       <label>
-        Patient phone
+        {l.patientPhone}
         <input name="patientPhone" type="tel" />
       </label>
       <label>
-        Service needed
+        {l.serviceNeeded}
         <select name="serviceNeeded" defaultValue="">
           <option value="" disabled>
-            Select one
+            {l.selectOne}
           </option>
           <option value="dme">DME</option>
           <option value="crt">Complex Rehab Technology (CRT)</option>
@@ -87,16 +86,14 @@ export default function ReferralForm() {
         </select>
       </label>
       <label>
-        Notes (please do not include diagnosis or DOB)
+        {l.notes}
         <textarea name="notes" rows={4} />
       </label>
       <button className="submit" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : "Submit referral"}
+        {status === "sending" ? t.common.sending : l.submitReferral}
       </button>
       {status === "error" && (
-        <p style={{ color: "#a4372b" }}>
-          Something went wrong. Please try again or call (213) 413-2343.
-        </p>
+        <p style={{ color: "#a4372b" }}>{t.common.errorGeneric}</p>
       )}
     </form>
   );

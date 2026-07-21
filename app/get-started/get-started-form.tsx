@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function GetStartedForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
@@ -36,30 +38,27 @@ export default function GetStartedForm() {
   }
 
   if (status === "sent") {
-    return (
-      <p>
-        Thank you. Our team will review your information and reach out to
-        confirm coverage.
-      </p>
-    );
+    return <p>{t.getStarted.thanks}</p>;
   }
+
+  const l = t.getStarted.labels;
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <label>
-        Full name
+        {t.common.name}
         <input name="name" type="text" required />
       </label>
       <label>
-        Phone
+        {l.phone}
         <input name="phone" type="tel" required />
       </label>
       <label>
-        Email
+        {t.common.email}
         <input name="email" type="email" />
       </label>
       <label>
-        Insurance carrier
+        {l.insuranceCarrier}
         <input
           name="insuranceCarrier"
           type="text"
@@ -68,14 +67,14 @@ export default function GetStartedForm() {
         />
       </label>
       <label>
-        Member ID (optional)
+        {l.memberId}
         <input name="memberId" type="text" />
       </label>
       <label>
-        What do you need?
+        {l.serviceNeeded}
         <select name="serviceNeeded" defaultValue="">
           <option value="" disabled>
-            Select one
+            {l.selectOne}
           </option>
           <option value="pharmacy">Pharmacy / prescriptions</option>
           <option value="medical-supply">Medical Supply</option>
@@ -85,12 +84,10 @@ export default function GetStartedForm() {
         </select>
       </label>
       <button className="submit" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : "Submit"}
+        {status === "sending" ? t.common.sending : t.common.submit}
       </button>
       {status === "error" && (
-        <p style={{ color: "#a4372b" }}>
-          Something went wrong. Please try again or call (213) 413-2343.
-        </p>
+        <p style={{ color: "#a4372b" }}>{t.common.errorGeneric}</p>
       )}
     </form>
   );

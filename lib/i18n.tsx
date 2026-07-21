@@ -4,7 +4,45 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type Lang = "en" | "es";
 
-const dictionary = {
+interface Dictionary {
+  nav: {
+    pharmacy: string;
+    medicalSupply: string;
+    dmeCrt: string;
+    warehouse: string;
+    about: string;
+    contact: string;
+    referral: string;
+    getStarted: string;
+  };
+  hero: {
+    eyebrow: string;
+    title: string;
+    lede: string;
+  };
+  schedule: {
+    heading: string;
+    withLink: string;
+    withoutLink: string;
+    online: string;
+    call: string;
+  };
+  footer: {
+    blurb: string;
+    contact: string;
+    links: string;
+    home: string;
+    about: string;
+    contactLink: string;
+    rights: string;
+    terms: string;
+    privacy: string;
+    hipaa: string;
+  };
+  langToggle: string;
+}
+
+const dictionary: Record<Lang, Dictionary> = {
   en: {
     nav: {
       pharmacy: "Pharmacy",
@@ -85,9 +123,7 @@ const dictionary = {
     },
     langToggle: "English",
   },
-} as const;
-
-type Dictionary = typeof dictionary.en;
+};
 
 const LanguageContext = createContext<{
   lang: Lang;

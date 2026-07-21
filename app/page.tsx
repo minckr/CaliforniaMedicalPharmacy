@@ -1,5 +1,8 @@
+"use client";
+
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import { useLanguage } from "@/lib/i18n";
 
 const DIVISIONS = [
   { index: "01", id: "pharmacy", name: "Pharmacy" },
@@ -31,20 +34,17 @@ function StaffList({
 }
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
   return (
     <>
       <SiteHeader />
 
       <section className="hero">
         <div className="inner">
-          <span className="eyebrow">Los Angeles, CA</span>
-          <h1>Four sides of care, one pharmacy.</h1>
-          <p className="lede">
-            California Medical Pharmacy operates as a single practice across
-            four divisions: prescription pharmacy, medical supply, DME/CRT,
-            and our own warehouse and delivery operation. Find your division
-            below.
-          </p>
+          <span className="eyebrow">{t.hero.eyebrow}</span>
+          <h1>{t.hero.title}</h1>
+          <p className="lede">{t.hero.lede}</p>
 
           <div className="directory">
             {DIVISIONS.map((d) => (
@@ -214,11 +214,11 @@ export default function HomePage() {
               />
 
               <div className="schedule-box">
-                <h3>Schedule a CRT/DME evaluation</h3>
+                <h3>{t.schedule.heading}</h3>
                 <p>
                   {CALENDLY_URL
-                    ? "Pick a time that works for you and it will land directly on our team's calendar."
-                    : "Online scheduling is being connected. In the meantime, call us to book an evaluation."}
+                    ? t.schedule.withLink
+                    : t.schedule.withoutLink}
                 </p>
                 {CALENDLY_URL ? (
                   <a
@@ -227,12 +227,16 @@ export default function HomePage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Schedule online
+                    {t.schedule.online}
                   </a>
                 ) : null}
                 <a className="btn secondary" href="tel:+12134132343">
-                  Call (213) 413-2343
+                  {t.schedule.call}
                 </a>
+                <p style={{ marginTop: "0.9rem", fontSize: "0.85rem" }}>
+                  Referring provider?{" "}
+                  <a href="/referral">Submit a referral</a> instead.
+                </p>
               </div>
             </div>
           </div>
@@ -273,6 +277,10 @@ export default function HomePage() {
                   { name: "Mauricio", ext: "247" },
                 ]}
               />
+
+              <p className="tbd" style={{ marginTop: "1.25rem" }}>
+                Delivery service area: to be confirmed.
+              </p>
             </div>
           </div>
         </div>

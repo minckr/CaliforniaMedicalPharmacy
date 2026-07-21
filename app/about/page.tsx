@@ -3,6 +3,7 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { useLanguage } from "@/lib/i18n";
+import { PhotoPlaceholder } from "@/components/icons";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -21,13 +22,14 @@ export default function AboutPage() {
 
       <section className="division">
         <div className="inner">
-          <div className="division-body">
-            <span />
+          <blockquote className="pull-quote">{t.about.body[0]}</blockquote>
+          <div className="division-body about-body-grid">
             <div className="division-copy">
-              {t.about.body.map((paragraph, i) => (
+              {t.about.body.slice(1).map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
+            <PhotoPlaceholder label={t.about.teamPhotoLabel} height={280} />
           </div>
         </div>
       </section>

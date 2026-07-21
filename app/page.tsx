@@ -3,12 +3,24 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { useLanguage } from "@/lib/i18n";
+import HeroGraphic from "@/components/hero-graphic";
+import {
+  IconPharmacy,
+  IconMedicalSupply,
+  IconDmeCrt,
+  IconWarehouse,
+  IconFamily,
+  IconLanguage,
+  IconShieldCheck,
+  IconOneTeam,
+  PhotoPlaceholder,
+} from "@/components/icons";
 
 const DIVISION_META = [
-  { index: "01", id: "pharmacy", key: "pharmacy" as const },
-  { index: "02", id: "medical-supply", key: "medicalSupply" as const },
-  { index: "03", id: "dme-crt", key: "dmeCrt" as const },
-  { index: "04", id: "warehouse", key: "warehouse" as const },
+  { index: "01", id: "pharmacy", key: "pharmacy" as const, Icon: IconPharmacy },
+  { index: "02", id: "medical-supply", key: "medicalSupply" as const, Icon: IconMedicalSupply },
+  { index: "03", id: "dme-crt", key: "dmeCrt" as const, Icon: IconDmeCrt },
+  { index: "04", id: "warehouse", key: "warehouse" as const, Icon: IconWarehouse },
 ];
 
 const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL || null;
@@ -41,21 +53,62 @@ export default function HomePage() {
       <SiteHeader />
 
       <section className="hero">
-        <div className="inner">
-          <span className="eyebrow">{t.home.eyebrow}</span>
-          <h1>{t.home.title}</h1>
-          <p className="lede">{t.home.lede}</p>
+        <div className="inner hero-grid">
+          <div>
+            <span className="eyebrow">{t.home.eyebrow}</span>
+            <h1>{t.home.title}</h1>
+            <p className="lede">{t.home.lede}</p>
 
-          <div className="directory">
-            {DIVISION_META.map((d) => (
-              <a key={d.id} href={`#${d.id}`} className="directory-row">
-                <span className="directory-index">{d.index}</span>
-                <span className="directory-name">
-                  {t.home.divisions[d.key].name}
-                </span>
-                <span className="directory-arrow">{t.home.view} &darr;</span>
-              </a>
-            ))}
+            <div className="directory">
+              {DIVISION_META.map((d) => (
+                <a key={d.id} href={`#${d.id}`} className="directory-row">
+                  <span className="directory-index">{d.index}</span>
+                  <span className="directory-icon">
+                    <d.Icon size={20} />
+                  </span>
+                  <span className="directory-name">
+                    {t.home.divisions[d.key].name}
+                  </span>
+                  <span className="directory-arrow">{t.home.view} &darr;</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="hero-graphic-wrap">
+            <HeroGraphic />
+          </div>
+        </div>
+      </section>
+
+      <section className="trust-strip">
+        <div className="inner trust-strip-grid">
+          <div className="trust-item">
+            <IconFamily />
+            <div>
+              <strong>{t.home.trustStrip.familyOwned.title}</strong>
+              <p>{t.home.trustStrip.familyOwned.copy}</p>
+            </div>
+          </div>
+          <div className="trust-item">
+            <IconLanguage />
+            <div>
+              <strong>{t.home.trustStrip.bilingual.title}</strong>
+              <p>{t.home.trustStrip.bilingual.copy}</p>
+            </div>
+          </div>
+          <div className="trust-item">
+            <IconShieldCheck />
+            <div>
+              <strong>{t.home.trustStrip.insurance.title}</strong>
+              <p>{t.home.trustStrip.insurance.copy}</p>
+            </div>
+          </div>
+          <div className="trust-item">
+            <IconOneTeam />
+            <div>
+              <strong>{t.home.trustStrip.oneTeam.title}</strong>
+              <p>{t.home.trustStrip.oneTeam.copy}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -64,7 +117,10 @@ export default function HomePage() {
         <div className="inner">
           <div className="division-head">
             <span className="division-index">01</span>
-            <h2>{t.home.divisions.pharmacy.name}</h2>
+            <h2>
+              <span className="division-icon"><IconPharmacy size={24} /></span>
+              {t.home.divisions.pharmacy.name}
+            </h2>
           </div>
           <div className="division-body">
             <span />
@@ -111,7 +167,10 @@ export default function HomePage() {
         <div className="inner">
           <div className="division-head">
             <span className="division-index">02</span>
-            <h2>{t.home.divisions.medicalSupply.name}</h2>
+            <h2>
+              <span className="division-icon"><IconMedicalSupply size={24} /></span>
+              {t.home.divisions.medicalSupply.name}
+            </h2>
           </div>
           <div className="division-body">
             <span />
@@ -162,7 +221,10 @@ export default function HomePage() {
         <div className="inner">
           <div className="division-head">
             <span className="division-index">03</span>
-            <h2>{t.home.divisions.dmeCrt.name}</h2>
+            <h2>
+              <span className="division-icon"><IconDmeCrt size={24} /></span>
+              {t.home.divisions.dmeCrt.name}
+            </h2>
           </div>
           <div className="division-body">
             <span />
@@ -229,7 +291,10 @@ export default function HomePage() {
         <div className="inner">
           <div className="division-head">
             <span className="division-index">04</span>
-            <h2>{t.home.divisions.warehouse.name}</h2>
+            <h2>
+              <span className="division-icon"><IconWarehouse size={24} /></span>
+              {t.home.divisions.warehouse.name}
+            </h2>
           </div>
           <div className="division-body">
             <span />
@@ -261,29 +326,32 @@ export default function HomePage() {
       </section>
 
       <section className="team-section">
-        <div className="inner">
-          <h2>{t.home.dialByDept.heading}</h2>
-          <p className="lede">{t.home.dialByDept.lede}</p>
+        <div className="inner team-section-grid">
+          <div>
+            <h2>{t.home.dialByDept.heading}</h2>
+            <p className="lede">{t.home.dialByDept.lede}</p>
 
-          <div className="main-line">
-            <dt>{t.common.phone}</dt>
-            <span className="detail">(213) 413-2343</span>
-          </div>
+            <div className="main-line">
+              <dt>{t.common.phone}</dt>
+              <span className="detail">(213) 413-2343</span>
+            </div>
 
-          <div className="staff-list" style={{ marginTop: "1.5rem" }}>
-            <div className="staff-row">
-              <dt className="staff-name">{t.home.dialByDept.pharmacy}</dt>
-            </div>
-            <div className="staff-row">
-              <dt className="staff-name">{t.home.dialByDept.office}</dt>
-            </div>
-            <div className="staff-row">
-              <dt className="staff-name">{t.home.dialByDept.medicalSupply}</dt>
-            </div>
-            <div className="staff-row">
-              <dt className="staff-name">{t.home.dialByDept.warehouse}</dt>
+            <div className="staff-list" style={{ marginTop: "1.5rem" }}>
+              <div className="staff-row">
+                <dt className="staff-name">{t.home.dialByDept.pharmacy}</dt>
+              </div>
+              <div className="staff-row">
+                <dt className="staff-name">{t.home.dialByDept.office}</dt>
+              </div>
+              <div className="staff-row">
+                <dt className="staff-name">{t.home.dialByDept.medicalSupply}</dt>
+              </div>
+              <div className="staff-row">
+                <dt className="staff-name">{t.home.dialByDept.warehouse}</dt>
+              </div>
             </div>
           </div>
+          <PhotoPlaceholder label={t.home.photoLabel} height={320} />
         </div>
       </section>
 

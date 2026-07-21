@@ -66,6 +66,13 @@ interface Dictionary {
       medicalSupply: string;
       warehouse: string;
     };
+    trustStrip: {
+      familyOwned: { title: string; copy: string };
+      bilingual: { title: string; copy: string };
+      insurance: { title: string; copy: string };
+      oneTeam: { title: string; copy: string };
+    };
+    photoLabel: string;
   };
   about: {
     eyebrow: string;
@@ -85,6 +92,7 @@ interface Dictionary {
     accreditationBodyNote: string;
     tbd: string;
     closing: string;
+    teamPhotoLabel: string;
   };
   contact: {
     heading: string;
@@ -214,6 +222,25 @@ const dictionary: Record<Lang, Dictionary> = {
         medicalSupply: "Medical Supply — ext. 3",
         warehouse: "Warehouse — ext. 4",
       },
+      trustStrip: {
+        familyOwned: {
+          title: "Family owned",
+          copy: "Decisions get made by people who answer the phone, not a call center out of state.",
+        },
+        bilingual: {
+          title: "Se habla español",
+          copy: "Spanish-speaking staff across all four divisions, not just the front desk.",
+        },
+        insurance: {
+          title: "Medicare & Medi-Cal",
+          copy: "We handle insurance and prior authorization directly with you and your provider.",
+        },
+        oneTeam: {
+          title: "One team, four services",
+          copy: "The same team fills your prescription and coordinates your equipment delivery.",
+        },
+      },
+      photoLabel: "Photo of our downtown LA location, coming soon",
     },
     about: {
       eyebrow: "About Us",
@@ -247,6 +274,7 @@ const dictionary: Record<Lang, Dictionary> = {
       accreditationBodyNote: "(ACHC, NABP, or CHAP, confirm which)",
       tbd: "To be added",
       closing: "Have a question about whether we cover something, or want to get started? Start here, or if you're a referring provider, submit a referral. You can also reach out directly, or see our DME/CRT section to schedule an evaluation.",
+      teamPhotoLabel: "Photo of our team, coming soon",
     },
     contact: {
       heading: "Contact Us",
@@ -374,6 +402,25 @@ const dictionary: Record<Lang, Dictionary> = {
         medicalSupply: "Suministros Médicos — ext. 3",
         warehouse: "Almacén — ext. 4",
       },
+      trustStrip: {
+        familyOwned: {
+          title: "Empresa familiar",
+          copy: "Las decisiones las toman personas que contestan el teléfono, no un centro de llamadas fuera del estado.",
+        },
+        bilingual: {
+          title: "Se habla español",
+          copy: "Personal que habla español en las cuatro divisiones, no solo en la recepción.",
+        },
+        insurance: {
+          title: "Medicare y Medi-Cal",
+          copy: "Gestionamos el seguro y la autorización previa directamente con usted y su proveedor.",
+        },
+        oneTeam: {
+          title: "Un equipo, cuatro servicios",
+          copy: "El mismo equipo surte su receta y coordina la entrega de su equipo.",
+        },
+      },
+      photoLabel: "Foto de nuestra ubicación en el centro de LA, próximamente",
     },
     about: {
       eyebrow: "Sobre Nosotros",
@@ -407,6 +454,7 @@ const dictionary: Record<Lang, Dictionary> = {
       accreditationBodyNote: "(ACHC, NABP, o CHAP, confirmar cuál)",
       tbd: "Por agregar",
       closing: "¿Tiene alguna pregunta sobre si cubrimos algo, o quiere comenzar? Empiece aquí, o si es un proveedor que refiere, envíe una referencia. También puede contactarnos directamente, o ver nuestra sección de DME/CRT para programar una evaluación.",
+      teamPhotoLabel: "Foto de nuestro equipo, próximamente",
     },
     contact: {
       heading: "Contáctenos",

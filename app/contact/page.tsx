@@ -19,6 +19,18 @@ export default function ContactPage() {
           {t.contact.intro}
         </p>
         <ContactForm />
+
+        <div className="map-embed">
+          <iframe
+            title="California Medical Pharmacy location"
+            src="https://www.google.com/maps?q=2201+W+Temple+St,+Los+Angeles,+CA+90026&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </main>
       <SiteFooter />
     </div>

@@ -1,0 +1,32 @@
+export default function Logo() {
+  return (
+    <a href="/" className="logo">
+      <svg
+        viewBox="0 0 64 64"
+        width="30"
+        height="30"
+        aria-hidden="true"
+        className="logo-mark"
+      >
+        <g transform="translate(32,32)">
+          <g transform="rotate(0)">
+            <path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#1f6f5c" />
+          </g>
+          <g transform="rotate(90)">
+            <path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#d9a441" />
+          </g>
+          <g transform="rotate(180)">
+            <path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#2d8a72" />
+          </g>
+          <g transform="rotate(270)">
+            <path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#c68f2e" />
+          </g>
+          <circle cx="0" cy="0" r="4.5" fill="#1b2430" />
+        </g>
+      </svg>
+      <span className="logo-word">
+        California <strong>Medical Pharmacy</strong>
+      </span>
+    </a>
+  );
+}

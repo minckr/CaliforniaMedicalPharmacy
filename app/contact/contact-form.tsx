@@ -53,8 +53,7 @@ export default function ContactForm() {
       </button>
       {status === "error" && (
         <p style={{ color: "#a4372b" }}>
-          Something went wrong. Please try again or call the pharmacy
-          directly.
+          Something went wrong. Please try again or call (213) 413-2343.
         </p>
       )}
     </form>

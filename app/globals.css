@@ -60,6 +60,7 @@ a {
   align-items: center;
   gap: 1rem;
   flex-wrap: nowrap;
+  max-width: 1180px;
 }
 
 .logo {
@@ -86,14 +87,24 @@ a {
 
 .logo-mark {
   display: block;
-  height: 36px;
+  height: 30px;
   width: auto;
+}
+
+@media (max-width: 720px) {
+  .site-header .inner {
+    flex-wrap: wrap;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
 }
 
 nav {
   display: flex;
-  gap: 1.4rem;
-  flex-wrap: wrap;
+  gap: 0.95rem;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
 }
 
 nav a {

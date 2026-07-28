@@ -6,9 +6,9 @@ export default function Logo() {
       <Image
         src="/brand/logo-compact.png"
         alt="California Medical Pharmacy"
-        width={156}
-        height={36}
-        style={{ height: "36px", width: "auto" }}
+        width={130}
+        height={30}
+        style={{ height: "30px", width: "auto" }}
         className="logo-mark"
         priority
       />

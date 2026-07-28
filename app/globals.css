@@ -59,7 +59,11 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  flex-shrink: 0;
 }
 
 .logo {
@@ -82,7 +86,7 @@ a {
 
 .logo-mark {
   display: block;
-  height: 42px;
+  height: 36px;
   width: auto;
 }
 

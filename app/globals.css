@@ -3,10 +3,10 @@
   --paper-raised: #ffffff;
   --ink: #17221e;
   --ink-soft: #4e594f;
-  --teal-900: #123d33;
-  --teal-700: #1f6f5c;
-  --teal-500: #2d8a72;
-  --gold-700: #a8781f;
+  --green-900: #123322;
+  --green-700: #1a4b28;
+  --green-500: #2f7a47;
+  --gold-700: #a4791f;
   --gold-500: #d9a441;
   --line: #ddd8c8;
   --radius: 4px;
@@ -80,6 +80,12 @@ a {
   font-weight: 700;
 }
 
+.logo-mark {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
 nav {
   display: flex;
   gap: 1.4rem;
@@ -98,8 +104,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--teal-700);
-  border-bottom-color: var(--teal-700);
+  color: var(--green-700);
+  border-bottom-color: var(--green-700);
 }
 
 .lang-toggle {
@@ -116,8 +122,8 @@ nav a:hover {
 }
 
 .lang-toggle:hover {
-  border-color: var(--teal-700);
-  color: var(--teal-700);
+  border-color: var(--green-700);
+  color: var(--green-700);
 }
 
 /* ---------- hero / directory board ---------- */
@@ -132,7 +138,7 @@ nav a:hover {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--teal-700);
+  color: var(--green-700);
   display: block;
   margin-bottom: 0.9rem;
 }
@@ -169,7 +175,7 @@ nav a:hover {
 }
 
 .directory-row:hover .directory-name {
-  color: var(--teal-700);
+  color: var(--green-700);
 }
 
 .directory-index {
@@ -297,7 +303,7 @@ nav a:hover {
 .staff-ext {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--teal-700);
+  color: var(--green-700);
   margin: 0;
   white-space: nowrap;
 }
@@ -315,7 +321,7 @@ nav a:hover {
   margin-top: 1.75rem;
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--teal-700);
+  border-left: 3px solid var(--green-700);
   border-radius: var(--radius);
   padding: 1.25rem 1.4rem;
   max-width: 40em;
@@ -335,7 +341,7 @@ nav a:hover {
 
 .btn {
   display: inline-block;
-  background: var(--teal-700);
+  background: var(--green-700);
   color: white;
   text-decoration: none;
   padding: 0.6rem 1.1rem;
@@ -345,18 +351,18 @@ nav a:hover {
 }
 
 .btn:hover {
-  background: var(--teal-900);
+  background: var(--green-900);
 }
 
 .btn.secondary {
   background: transparent;
-  color: var(--teal-700);
-  border: 1px solid var(--teal-700);
+  color: var(--green-700);
+  border: 1px solid var(--green-700);
   margin-left: 0.6rem;
 }
 
 .btn.secondary:hover {
-  background: var(--teal-700);
+  background: var(--green-700);
   color: white;
 }
 
@@ -400,7 +406,7 @@ nav a:hover {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--teal-700);
+  color: var(--green-700);
   margin: 0.15rem 0 0.6rem;
 }
 
@@ -476,7 +482,7 @@ nav a:hover {
 }
 
 .footer-list a:hover {
-  color: var(--teal-700);
+  color: var(--green-700);
 }
 
 .about-list {
@@ -545,7 +551,7 @@ nav a:hover {
 }
 
 .footer-links a:hover {
-  color: var(--teal-700);
+  color: var(--green-700);
 }
 
 /* ---------- legal pages ---------- */
@@ -614,7 +620,7 @@ form.contact-form select {
 }
 
 button.submit {
-  background: var(--teal-700);
+  background: var(--green-700);
   color: white;
   border: none;
   border-radius: var(--radius);
@@ -625,7 +631,7 @@ button.submit {
 }
 
 button.submit:hover {
-  background: var(--teal-900);
+  background: var(--green-900);
 }
 
 .hero-grid {
@@ -645,7 +651,7 @@ button.submit:hover {
 }
 
 .directory-icon {
-  color: var(--teal-700);
+  color: var(--green-700);
   display: flex;
   align-items: center;
 }
@@ -655,7 +661,7 @@ button.submit:hover {
 }
 
 .division-icon {
-  color: var(--teal-700);
+  color: var(--green-700);
   display: inline-flex;
   vertical-align: -6px;
   margin-right: 0.5rem;
@@ -680,7 +686,7 @@ button.submit:hover {
 }
 
 .trust-item svg {
-  color: var(--teal-700);
+  color: var(--green-700);
   flex-shrink: 0;
   margin-top: 0.15rem;
 }

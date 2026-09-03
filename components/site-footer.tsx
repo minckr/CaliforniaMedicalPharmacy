@@ -45,6 +45,12 @@ export default function SiteFooter() {
                 <a href="/about">{t.footer.about}</a>
               </li>
               <li>
+                <a href="/refill">{t.footer.refill}</a>
+              </li>
+              <li>
+                <a href="/resources">{t.footer.resources}</a>
+              </li>
+              <li>
                 <a href="/contact">{t.footer.contactLink}</a>
               </li>
             </ul>

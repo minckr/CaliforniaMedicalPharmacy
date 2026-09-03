@@ -132,6 +132,26 @@ interface Dictionary {
     };
     thanks: string;
   };
+  refill: {
+    heading: string;
+    intro: string;
+    labels: {
+      phone: string;
+      refillType: string;
+      selectOne: string;
+      prescription: string;
+      dmeSupply: string;
+      notSure: string;
+      details: string;
+      detailsPlaceholder: string;
+    };
+    thanks: string;
+  };
+  resources: {
+    heading: string;
+    intro: string;
+    items: { question: string; answer: string }[];
+  };
   footer: {
     blurb: string;
     contact: string;
@@ -139,6 +159,8 @@ interface Dictionary {
     home: string;
     about: string;
     contactLink: string;
+    refill: string;
+    resources: string;
     rights: string;
     terms: string;
     privacy: string;
@@ -314,6 +336,51 @@ const dictionary: Record<Lang, Dictionary> = {
       },
       thanks: "Thank you. Our team will review your information and reach out to confirm coverage.",
     },
+    refill: {
+      heading: "Request a Refill",
+      intro: "Need a prescription refilled, or a supply item reordered outside your normal resupply cycle? If you're already enrolled in our automated resupply program, you'll typically get a text or email when it's time, this form is for anything outside that, or for a first-time refill request. Please do not include your diagnosis or full date of birth here; our team will follow up directly for anything further needed.",
+      labels: {
+        phone: "Phone",
+        refillType: "What needs to be refilled?",
+        selectOne: "Select one",
+        prescription: "Prescription medication",
+        dmeSupply: "DME or medical supply item",
+        notSure: "Not sure",
+        details: "Prescription number or item details (optional)",
+        detailsPlaceholder: "e.g. Rx #123456, or \"CPAP filters\"",
+      },
+      thanks: "Thank you. Your refill request has been sent to our team and someone will follow up shortly.",
+    },
+    resources: {
+      heading: "Patient Resources",
+      intro: "Answers to what we're asked most often. Can't find what you need? Call us at (213) 413-2343.",
+      items: [
+        {
+          question: "What should I bring to a CRT evaluation?",
+          answer: "Bring a photo ID, your insurance card, and any physician orders or documentation you've already received. If you use a current mobility device, bringing it along helps our team assess fit and function.",
+        },
+        {
+          question: "How does prior authorization work?",
+          answer: "For many DME and CRT items, your insurance requires approval before equipment is dispensed. Once your evaluation and physician documentation are complete, our team submits the authorization request and follows up with you once we hear back. Timing varies by insurance carrier.",
+        },
+        {
+          question: "How does the resupply program work?",
+          answer: "If you have recurring supply needs, we'll text and/or email you when you're eligible for a resupply, with a secure link to review and confirm your order. Message frequency depends on your specific supply schedule. See our Terms and Conditions for full program details.",
+        },
+        {
+          question: "What insurance do you accept?",
+          answer: "We accept Medicare, Medi-Cal, and most private insurance carriers. Our team handles insurance verification and prior authorization directly with you and your provider.",
+        },
+        {
+          question: "How do I request a refill?",
+          answer: "Use our Request a Refill form for prescriptions or supply items outside your normal resupply cycle, or call us directly.",
+        },
+        {
+          question: "I'm a provider, how do I refer a patient?",
+          answer: "Use our Provider Referral form, or fax/call the relevant department directly.",
+        },
+      ],
+    },
     footer: {
       blurb: "A family owned and operated pharmacy in downtown Los Angeles, covering prescription pharmacy, medical supply, DME/CRT, and our own warehouse and delivery, end to end, under one roof.",
       contact: "Contact",
@@ -321,6 +388,8 @@ const dictionary: Record<Lang, Dictionary> = {
       home: "Home",
       about: "About Us",
       contactLink: "Contact",
+      refill: "Request a Refill",
+      resources: "Patient Resources",
       rights: "All rights reserved.",
       terms: "Terms & Conditions",
       privacy: "Privacy Policy",
@@ -494,6 +563,51 @@ const dictionary: Record<Lang, Dictionary> = {
       },
       thanks: "Gracias. Nuestro equipo revisará su información y se comunicará para confirmar la cobertura.",
     },
+    refill: {
+      heading: "Solicitar un Reabastecimiento",
+      intro: "¿Necesita que le reabastezcan una receta, o reordenar un artículo de suministro fuera de su ciclo normal de reabastecimiento? Si ya está inscrito en nuestro programa automático de reabastecimiento, normalmente recibirá un mensaje de texto o correo electrónico cuando sea el momento; este formulario es para cualquier necesidad fuera de eso, o para una primera solicitud. Por favor no incluya su diagnóstico ni su fecha de nacimiento completa aquí; nuestro equipo se comunicará directamente para obtener lo que se necesite.",
+      labels: {
+        phone: "Teléfono",
+        refillType: "¿Qué necesita reabastecer?",
+        selectOne: "Seleccione uno",
+        prescription: "Medicamento recetado",
+        dmeSupply: "Artículo de DME o suministro médico",
+        notSure: "No estoy seguro",
+        details: "Número de receta o detalles del artículo (opcional)",
+        detailsPlaceholder: "ej. Receta #123456, o \"filtros de CPAP\"",
+      },
+      thanks: "Gracias. Su solicitud de reabastecimiento ha sido enviada a nuestro equipo y alguien dará seguimiento pronto.",
+    },
+    resources: {
+      heading: "Recursos para Pacientes",
+      intro: "Respuestas a lo que más nos preguntan. ¿No encuentra lo que necesita? Llámenos al (213) 413-2343.",
+      items: [
+        {
+          question: "¿Qué debo llevar a una evaluación de CRT?",
+          answer: "Traiga una identificación con foto, su tarjeta de seguro, y cualquier orden médica o documentación que ya haya recibido. Si usa un dispositivo de movilidad actualmente, traerlo ayuda a nuestro equipo a evaluar el ajuste y la función.",
+        },
+        {
+          question: "¿Cómo funciona la autorización previa?",
+          answer: "Para muchos artículos de DME y CRT, su seguro requiere aprobación antes de entregar el equipo. Una vez que su evaluación y documentación médica estén completas, nuestro equipo envía la solicitud de autorización y le da seguimiento cuando recibamos respuesta. El tiempo varía según la compañía de seguro.",
+        },
+        {
+          question: "¿Cómo funciona el programa de reabastecimiento?",
+          answer: "Si tiene necesidades recurrentes de suministros, le enviaremos un mensaje de texto y/o correo electrónico cuando sea elegible para un reabastecimiento, con un enlace seguro para revisar y confirmar su pedido. La frecuencia de los mensajes depende de su calendario específico de suministros. Consulte nuestros Términos y Condiciones para más detalles del programa.",
+        },
+        {
+          question: "¿Qué seguros aceptan?",
+          answer: "Aceptamos Medicare, Medi-Cal, y la mayoría de los seguros privados. Nuestro equipo se encarga de la verificación de seguro y autorización previa directamente con usted y su proveedor.",
+        },
+        {
+          question: "¿Cómo solicito un reabastecimiento?",
+          answer: "Use nuestro formulario de Solicitar un Reabastecimiento para recetas o artículos de suministro fuera de su ciclo normal, o llámenos directamente.",
+        },
+        {
+          question: "Soy proveedor, ¿cómo refiero a un paciente?",
+          answer: "Use nuestro formulario de Referencia de Proveedor, o envíe un fax o llame directamente al departamento correspondiente.",
+        },
+      ],
+    },
     footer: {
       blurb: "Una farmacia familiar en el centro de Los Ángeles, que cubre farmacia de recetas, suministros médicos, DME/CRT, y nuestra propia entrega, todo bajo un mismo techo.",
       contact: "Contacto",
@@ -501,6 +615,8 @@ const dictionary: Record<Lang, Dictionary> = {
       home: "Inicio",
       about: "Sobre Nosotros",
       contactLink: "Contacto",
+      refill: "Solicitar un Reabastecimiento",
+      resources: "Recursos para Pacientes",
       rights: "Todos los derechos reservados.",
       terms: "Términos y Condiciones",
       privacy: "Política de Privacidad",

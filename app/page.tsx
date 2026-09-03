@@ -158,6 +158,12 @@ export default function HomePage() {
 
               <h3 className="staff-heading">{t.home.staffHeadings.formula}</h3>
               <StaffList people={[{ name: "Araceli", ext: "236" }]} />
+
+              <p style={{ marginTop: "1.25rem" }}>
+                <a href="/refill" className="btn secondary" style={{ marginLeft: 0 }}>
+                  {t.footer.refill}
+                </a>
+              </p>
             </div>
           </div>
         </div>

@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <g transform="translate(32,32)">
-    <g transform="rotate(0)"><path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#1f6f5c"/></g>
-    <g transform="rotate(90)"><path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#d9a441"/></g>
-    <g transform="rotate(180)"><path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#2d8a72"/></g>
-    <g transform="rotate(270)"><path d="M 0 -3 Q -9 -10 0 -23 Q 9 -10 0 -3 Z" fill="#c68f2e"/></g>
-    <circle cx="0" cy="0" r="4.5" fill="#1b2430"/>
+  <g fill="#1A4B28">
+    <!-- mortar bowl -->
+    <path d="M 16 34 Q 16 50 32 50 Q 48 50 48 34 Z" />
+    <!-- bowl rim -->
+    <rect x="14" y="31" width="36" height="4" rx="2" />
+    <!-- pestle -->
+    <rect x="30.5" y="10" width="5" height="22" rx="2.5" transform="rotate(18 33 21)" />
+    <circle cx="40" cy="12" r="4.5" transform="rotate(18 33 21)" />
+    <!-- Rx mark on the bowl -->
+    <text x="32" y="45" font-family="Georgia, serif" font-size="13" font-weight="700"
+          text-anchor="middle" fill="#F6F4EE">Rx</text>
   </g>
 </svg>

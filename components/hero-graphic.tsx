@@ -11,26 +11,26 @@ export default function HeroGraphic() {
 
       <g transform="translate(180,180)">
         <g transform="rotate(0) translate(0,-38)">
-          <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--teal-700)" opacity="0.14" />
+          <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--green-700)" opacity="0.14" />
         </g>
         <g transform="rotate(90) translate(0,-38)">
           <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--gold-500)" opacity="0.18" />
         </g>
         <g transform="rotate(180) translate(0,-38)">
-          <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--teal-500)" opacity="0.16" />
+          <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--green-500)" opacity="0.16" />
         </g>
         <g transform="rotate(270) translate(0,-38)">
           <rect x="-30" y="-46" width="60" height="88" rx="14" fill="var(--gold-700)" opacity="0.14" />
         </g>
 
         <g transform="rotate(0)">
-          <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--teal-700)" />
+          <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--green-700)" />
         </g>
         <g transform="rotate(90)">
           <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--gold-500)" />
         </g>
         <g transform="rotate(180)">
-          <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--teal-500)" />
+          <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--green-500)" />
         </g>
         <g transform="rotate(270)">
           <path d="M 0 -3 Q -13 -15 0 -34 Q 13 -15 0 -3 Z" fill="var(--gold-700)" />

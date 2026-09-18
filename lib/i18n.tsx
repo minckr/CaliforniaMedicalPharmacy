@@ -199,19 +199,19 @@ const dictionary: Record<Lang, Dictionary> = {
       divisions: {
         pharmacy: {
           name: "Pharmacy",
-          copy: "Our pharmacy fills new prescriptions and refills, handles transfers from other pharmacies, and offers immunizations and one-on-one medication consultations. Our pharmacists are available to answer questions about interactions, dosing, and your treatment plan.",
+          copy: "New prescriptions, refills, transfers from another pharmacy, immunizations, and one-on-one consultations, all handled at this counter. Our pharmacists are available to answer questions about interactions, dosing, and your treatment plan.",
         },
         medicalSupply: {
           name: "Medical Supply",
-          copy: "Our medical supply division stocks everyday health and mobility essentials, from wound care and diabetic supplies to braces and daily living aids, for walk-in purchase or order.",
+          copy: "From wound care and diabetic supplies to braces and daily living aids, our medical supply division stocks the everyday essentials patients need, available for walk-in purchase or order.",
         },
         dmeCrt: {
           name: "DME / CRT",
-          copy: "Our Durable Medical Equipment and Complex Rehab Technology division fits and supplies wheelchairs, mobility equipment, and other DME. Complex Rehab Technology needs an in-person or virtual evaluation before equipment is fitted; use the link below to schedule one.",
+          copy: "Durable Medical Equipment and Complex Rehab Technology: wheelchair fitting, mobility equipment, and other DME. Complex Rehab Technology requires an in-person or virtual evaluation before equipment is fitted; use the link below to schedule one.",
         },
         warehouse: {
           name: "Warehouse & Delivery",
-          copy: "Our warehouse handles fulfillment and delivery for CRT and DME orders, coordinating with patients and referring providers to get equipment where it needs to go on schedule.",
+          copy: "Fulfillment and delivery for every CRT and DME order runs through our own warehouse, coordinated directly with patients and referring providers so equipment arrives on schedule.",
         },
       },
       factLabels: {
@@ -269,10 +269,10 @@ const dictionary: Record<Lang, Dictionary> = {
       title: "A family pharmacy, built for the long run.",
       lede: "We started as a single counter pharmacy and grew into four connected divisions without losing the part that matters most: knowing our patients by name. That's still how we operate today.",
       body: [
-        "Being family owned means decisions here get made by people who actually answer the phone, not a call center in another state. When something falls through the cracks, there's someone in the building who can fix it that day.",
-        "Downtown Los Angeles is a diverse community, and a large share of the patients we serve speak Spanish as a first language. We built our team, not just our website, around that: Spanish-speaking staff sit in every one of our four divisions, not just one front desk.",
-        "We handle Medicare, Medi-Cal, and private insurance directly, including prior authorization, so patients and referring providers aren't stuck navigating that alone.",
-        "None of this works as four separate businesses. It works because the same team that fills your prescription can also coordinate your equipment delivery, without you having to explain your situation twice.",
+        "Most people managing ongoing medical equipment and supply needs end up running their own small logistics operation, one company for prescriptions, another for equipment, a third for the paperwork in between. California Medical Pharmacy exists to take that job off your plate. A patient who needs a wheelchair fitted and a prescription filled works with the same team, the same phone number, and the same file, for both.",
+        "We're privately owned and run day to day by the people who actually work here, not a corporate office in another state. That has a practical effect: when a delivery runs late or a claim needs a second look, the person who can fix it is usually in the building, not three tiers of customer service away.",
+        "Downtown Los Angeles is home to a large Spanish-speaking community, and we built our team around that from the start. That means Spanish-speaking staff in pharmacy, medical supply, DME/CRT, and our warehouse, not a single bilingual line everyone gets routed through.",
+        "Medicare, Medi-Cal, and private insurance each have their own rules, especially around prior authorization for equipment. We manage that relationship directly with your insurer and your physician's office, so you're not the one relaying paperwork between two organizations that don't talk to each other.",
       ],
       whatWeCover: "What we cover",
       categories: [
@@ -369,7 +369,7 @@ const dictionary: Record<Lang, Dictionary> = {
         },
         {
           question: "What insurance do you accept?",
-          answer: "We accept Medicare, Medi-Cal, and most private insurance carriers. Our team handles insurance verification and prior authorization directly with you and your provider.",
+          answer: "We accept Medicare, Medi-Cal, and most private insurance carriers, and manage prior authorization on your behalf so you're not stuck relaying paperwork between your insurer and your physician.",
         },
         {
           question: "How do I request a refill?",
@@ -426,19 +426,19 @@ const dictionary: Record<Lang, Dictionary> = {
       divisions: {
         pharmacy: {
           name: "Farmacia",
-          copy: "Nuestra farmacia surte recetas nuevas y resurtidos, gestiona transferencias de otras farmacias, y ofrece vacunas y consultas individuales sobre medicamentos. Nuestros farmacéuticos están disponibles para responder preguntas sobre interacciones, dosis, y su plan de tratamiento.",
+          copy: "Recetas nuevas, resurtidos, transferencias de otra farmacia, vacunas, y consultas individuales, todo se atiende en este mostrador. Nuestros farmacéuticos están disponibles para responder preguntas sobre interacciones, dosis, y su plan de tratamiento.",
         },
         medicalSupply: {
           name: "Suministros Médicos",
-          copy: "Nuestra división de suministros médicos tiene lo esencial para la salud y movilidad diaria, desde cuidado de heridas y suministros para diabéticos hasta bastones y ayudas para la vida diaria, para compra en persona o por pedido.",
+          copy: "Desde cuidado de heridas y suministros para diabéticos hasta bastones y ayudas para la vida diaria, nuestra división de suministros médicos tiene lo esencial que los pacientes necesitan, disponible para compra en persona o por pedido.",
         },
         dmeCrt: {
           name: "DME / CRT",
-          copy: "Nuestra división de Equipo Médico Duradero y Tecnología de Rehabilitación Compleja ajusta y suministra sillas de ruedas, equipo de movilidad, y otro DME. La Tecnología de Rehabilitación Compleja requiere una evaluación en persona o virtual antes de ajustar el equipo; use el enlace abajo para programar una.",
+          copy: "Equipo Médico Duradero y Tecnología de Rehabilitación Compleja: ajuste de sillas de ruedas, equipo de movilidad, y otro DME. La Tecnología de Rehabilitación Compleja requiere una evaluación en persona o virtual antes de ajustar el equipo; use el enlace abajo para programar una.",
         },
         warehouse: {
           name: "Almacén y Entrega",
-          copy: "Nuestro almacén se encarga del cumplimiento y entrega de pedidos de CRT y DME, coordinando con pacientes y proveedores para que el equipo llegue a tiempo.",
+          copy: "El cumplimiento y entrega de cada pedido de CRT y DME pasa por nuestro propio almacén, coordinado directamente con pacientes y proveedores para que el equipo llegue a tiempo.",
         },
       },
       factLabels: {
@@ -496,10 +496,10 @@ const dictionary: Record<Lang, Dictionary> = {
       title: "Una farmacia familiar, construida para durar.",
       lede: "Empezamos como una sola farmacia de mostrador y crecimos hasta cuatro divisiones conectadas sin perder lo más importante: conocer a nuestros pacientes por nombre. Así seguimos operando hoy.",
       body: [
-        "Ser una empresa familiar significa que las decisiones las toman personas que realmente contestan el teléfono, no un centro de llamadas en otro estado. Cuando algo se complica, hay alguien en el edificio que puede resolverlo ese mismo día.",
-        "El centro de Los Ángeles es una comunidad diversa, y una gran parte de los pacientes que atendemos habla español como primer idioma. Construimos nuestro equipo, no solo nuestro sitio web, pensando en eso: hay personal que habla español en cada una de nuestras cuatro divisiones, no solo en la recepción.",
-        "Gestionamos Medicare, Medi-Cal, y seguros privados directamente, incluyendo autorizaciones previas, para que los pacientes y los proveedores que refieren no tengan que hacerlo solos.",
-        "Nada de esto funcionaría como cuatro negocios separados. Funciona porque el mismo equipo que surte su receta también puede coordinar la entrega de su equipo, sin que tenga que explicar su situación dos veces.",
+        "La mayoría de las personas que manejan necesidades médicas y de suministros continuas terminan dirigiendo su propia pequeña operación logística: una empresa para recetas, otra para equipo, una tercera para el papeleo entre medio. California Medical Pharmacy existe para quitarle ese trabajo de encima. Un paciente que necesita que le ajusten una silla de ruedas y le surtan una receta trabaja con el mismo equipo, el mismo número de teléfono, y el mismo expediente, para ambas cosas.",
+        "Somos de propiedad privada y las personas que trabajan aquí mismo dirigen las operaciones día a día, no una oficina corporativa en otro estado. Eso tiene un efecto práctico: cuando una entrega se retrasa o un reclamo necesita una segunda revisión, la persona que puede resolverlo normalmente está en el edificio, no a tres niveles de servicio al cliente de distancia.",
+        "El centro de Los Ángeles es hogar de una gran comunidad de habla hispana, y construimos nuestro equipo pensando en eso desde el principio. Eso significa personal que habla español en farmacia, suministros médicos, DME/CRT, y nuestro almacén, no una sola línea bilingüe a la que todos son transferidos.",
+        "Medicare, Medi-Cal, y los seguros privados tienen cada uno sus propias reglas, especialmente en cuanto a la autorización previa para equipo. Manejamos esa relación directamente con su aseguradora y el consultorio de su médico, para que usted no sea quien tenga que transmitir papeleo entre dos organizaciones que no se comunican entre sí.",
       ],
       whatWeCover: "Lo que cubrimos",
       categories: [
@@ -596,7 +596,7 @@ const dictionary: Record<Lang, Dictionary> = {
         },
         {
           question: "¿Qué seguros aceptan?",
-          answer: "Aceptamos Medicare, Medi-Cal, y la mayoría de los seguros privados. Nuestro equipo se encarga de la verificación de seguro y autorización previa directamente con usted y su proveedor.",
+          answer: "Aceptamos Medicare, Medi-Cal, y la mayoría de los seguros privados, y manejamos la autorización previa en su nombre para que usted no tenga que transmitir papeleo entre su aseguradora y su médico.",
         },
         {
           question: "¿Cómo solicito un reabastecimiento?",

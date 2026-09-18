@@ -9,7 +9,10 @@
   --gold-700: #a4791f;
   --gold-500: #d9a441;
   --line: #ddd8c8;
-  --radius: 4px;
+  --radius: 6px;
+  --shadow-sm: 0 1px 2px rgba(23, 34, 30, 0.05), 0 1px 1px rgba(23, 34, 30, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 34, 30, 0.08), 0 2px 6px rgba(23, 34, 30, 0.04);
+  --ease: 150ms ease;
 
   --font-display: "Libre Caslon Text", Georgia, serif;
   --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -52,6 +55,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header .inner {
@@ -116,6 +120,7 @@ nav a {
   color: var(--ink-soft);
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
+  transition: color var(--ease), border-color var(--ease);
 }
 
 nav a:hover {
@@ -134,6 +139,7 @@ nav a:hover {
   padding: 0.25rem 0.65rem;
   cursor: pointer;
   color: var(--ink);
+  transition: border-color var(--ease), color var(--ease);
 }
 
 .lang-toggle:hover {
@@ -154,15 +160,26 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--green-700);
-  display: block;
-  margin-bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 2px;
+  background: var(--gold-500);
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4vw, 3rem);
-  line-height: 1.08;
-  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 4.6vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.1rem;
   max-width: 16em;
 }
 
@@ -183,10 +200,17 @@ nav a:hover {
   grid-template-columns: 3.5rem 1fr auto;
   align-items: baseline;
   gap: 1rem;
-  padding: 1.1rem 0;
+  padding: 1.1rem 0.75rem;
+  margin: 0 -0.75rem;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
   color: var(--ink);
+  border-radius: var(--radius);
+  transition: background var(--ease);
+}
+
+.directory-row:hover {
+  background: var(--paper-raised);
 }
 
 .directory-row:hover .directory-name {
@@ -340,6 +364,7 @@ nav a:hover {
   border-radius: var(--radius);
   padding: 1.25rem 1.4rem;
   max-width: 40em;
+  box-shadow: var(--shadow-sm);
 }
 
 .schedule-box h3 {
@@ -359,14 +384,18 @@ nav a:hover {
   background: var(--green-700);
   color: white;
   text-decoration: none;
-  padding: 0.6rem 1.1rem;
+  padding: 0.65rem 1.25rem;
   border-radius: var(--radius);
   font-size: 0.9rem;
   font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
 }
 
 .btn:hover {
   background: var(--green-900);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn.secondary {
@@ -374,11 +403,13 @@ nav a:hover {
   color: var(--green-700);
   border: 1px solid var(--green-700);
   margin-left: 0.6rem;
+  box-shadow: none;
 }
 
 .btn.secondary:hover {
   background: var(--green-700);
   color: white;
+  transform: translateY(-1px);
 }
 
 /* ---------- team / contact section ---------- */
@@ -409,6 +440,13 @@ nav a:hover {
 .team-card {
   background: var(--paper-raised);
   padding: 1.1rem 1.2rem;
+  transition: box-shadow var(--ease);
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 1;
 }
 
 .team-card .name {
@@ -438,6 +476,7 @@ nav a:hover {
   padding: 1.25rem 1.4rem;
   margin-top: 1.5rem;
   max-width: 32em;
+  box-shadow: var(--shadow-sm);
 }
 
 .main-line .detail {
@@ -455,7 +494,9 @@ nav a:hover {
 /* ---------- footer ---------- */
 
 .site-footer {
-  padding: 2.5rem 0;
+  padding: 3rem 0 2.5rem;
+  background: var(--paper-raised);
+  border-top: 1px solid var(--line);
 }
 
 .footer-grid {
@@ -517,6 +558,11 @@ nav a:hover {
   border-radius: var(--radius);
   font-size: 0.95rem;
   color: var(--ink-soft);
+  transition: box-shadow var(--ease);
+}
+
+.about-list li:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 640px) {
@@ -632,6 +678,15 @@ form.contact-form select {
   font-size: 1rem;
   font-family: inherit;
   background: var(--paper-raised);
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+form.contact-form input:focus,
+form.contact-form textarea:focus,
+form.contact-form select:focus {
+  outline: none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(26, 75, 40, 0.12);
 }
 
 button.submit {
@@ -643,10 +698,14 @@ button.submit {
   font-size: 1rem;
   cursor: pointer;
   width: fit-content;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
 }
 
 button.submit:hover {
   background: var(--green-900);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .hero-grid {
@@ -698,6 +757,16 @@ button.submit:hover {
   display: flex;
   gap: 0.85rem;
   align-items: flex-start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+
+.trust-item:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .trust-item svg {
